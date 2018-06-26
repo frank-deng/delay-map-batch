@@ -1,9 +1,10 @@
 {
   "name": "delay-map-batch",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Enumerate array by batch, there will be a delay in milliseconds before processing the next batch.",
-  "main": "",
+  "main": "delay-map-batch.js",
   "scripts": {
+	"build": "uglifyjs -c -m -o delay-map-batch.min.js delay-map-batch.js",
     "test": "qunit-cli -c delay-map-batch.js test.js"
   },
   "repository": {
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/frank-deng/delay-map-batch#readme",
   "devDependencies": {
-    "qunit-cli": "^0.2.0"
+    "qunit-cli": "^0.2.0",
+    "uglify-js": "^3.4.1"
   }
 }
