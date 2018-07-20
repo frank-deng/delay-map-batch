@@ -166,5 +166,22 @@ QUnit.test('Exception thown within map function', function(assert){
 		done();
 	});
 });
+QUnit.test('Array with delay between batches', function(assert){
+	var done = assert.async(1);
+
+	var array5 = [1,2,3,4,5,6,7], result5 = [], timeStamp = (new Date().getTime()) / 1000;
+	new DelayMapBatch(array5, (n)=>{
+		result5.push(n);
+	}, {
+		batchSize: 2,
+		delay: 2000,
+	}).then((status)=>{
+		timeStamp2 = (new Date().getTime()) / 1000;
+		assert.deepEqual(array5, result5);
+		assert.strictEqual(status, true);
+		assert.ok((timeStamp2 - timeStamp) >= 6);
+		done();
+	});
+});
 
 

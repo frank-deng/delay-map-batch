@@ -1,6 +1,6 @@
 {
   "name": "delay-map-batch",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Enumerate array by batch, there will be a delay in milliseconds before processing the next batch.",
   "main": "delay-map-batch.js",
   "scripts": {

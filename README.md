@@ -3,6 +3,18 @@ delay-map-batch
 
 Enumerate array by batch, there will be a delay in milliseconds before processing the next batch.
 
+Installation
+------------
+
+Node
+
+	var DelayMapBatch = require('delay-map-batch');
+
+Browser
+
+	<script type='text/javascript' src='delay-map-batch.min.js'></script>
+
+
 Usage
 -----
 
@@ -15,17 +27,17 @@ Usage
 		//Mapping finished
 	});
 
+With 2s delay between batches:
 
-Installation
-------------
-
-Node
-
-	var DelayMapBatch = require('delay-map-batch');
-
-Browser
-
-	<script type='text/javascript' src='delay-map-batch.min.js'></script>
+	DelayMapBatch([1,2,3,4,5], (n, index)=>{
+		//Do some stuff
+		console.log(n);
+	}, {
+		batchSize: 1000,
+		delay: 2000,
+	}).then(()=>{
+		//Mapping finished
+	});
 
 
 API Documentation
